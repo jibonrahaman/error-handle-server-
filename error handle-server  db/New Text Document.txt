@@ -1,0 +1,12 @@
+// Handle 'EADDRINUSE' error
+server.on('error', (err) => {
+    if (err.code === 'EADDRINUSE') {
+        console.error(`Port ${port} is already in use.`);
+    } else {
+        console.error('Server error:', err);
+    }
+});
+
+
+
+app.port  নিচে সার্ভার এ এরোর রোধে
